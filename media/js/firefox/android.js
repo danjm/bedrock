@@ -2,7 +2,7 @@
 * License, v. 2.0. If a copy of the MPL was not distributed with this
 * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-;(function($) {
+;(function($, Mozilla) {
     'use strict';
 
     var $html = $('html');
@@ -312,15 +312,15 @@
             'screencast': 'Take it to the big screen',
         }[$(this).attr('id')];
 
-        $(this).on('expand', '[role="tabpanel"]', function(event) {
+        $(this).on('expand', '[role="tabpanel"]', function() {
             gaTrack(['_trackEvent', '/android/ Interactions', 'open', section]);
-        }).on('collapse', '[role="tabpanel"]', function(event) {
+        }).on('collapse', '[role="tabpanel"]', function() {
             gaTrack(['_trackEvent', '/android/ Interactions', 'close', section]);
         }).on('click', 'a', function(event) {
             interaction = $(this).hasClass('see-how') ? 'see how it works link click' : 'learn more link click';
             trackClick(['_trackEvent', '/android/ Interactions', interaction, section], event);
         });
-    })
+    });
 
     // track scroll
     $('#wrapper > *').waypoint(function(direction) {
@@ -341,4 +341,6 @@
         // make android robot say hello
         $('#intro-android').addClass('hello');
     });
-})(window.jQuery);
+
+    Mozilla.FxFamilyNav.init({ primaryId: 'android', subId: 'index' });
+})(window.jQuery, window.Mozilla);

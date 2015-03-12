@@ -273,5 +273,7 @@ if (typeof window.Mozilla === 'undefined') {
     });
 
     // initialize fx family nav
-    Mozilla.FxFamilyNav.init({ primaryId: 'os', subId: 'devices', ctaId: 'purchase-device-sticky' });
+    Mozilla.FxFamilyNav.init({ primaryId: 'os', subId: 'devices' });
+    //Mozilla.FxFamilyNav.init({ primaryId: 'android', subId: 'index' });
+    //Mozilla.FxFamilyNav.init({ primaryId: 'desktop', subId: 'fast' });
 })(window.jQuery, window.Mozilla);

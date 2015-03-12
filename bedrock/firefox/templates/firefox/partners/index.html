@@ -2,6 +2,8 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
+{% from "macros.html" import fxfamilynav with context %}
+
 {% extends "base-resp.html" %}
 
 {% block page_title %}{{ _('Firefox OS, Marketplace, Android — Partners') }}{% endblock %}
@@ -43,8 +45,7 @@
 {% block site_header %}{% endblock %}
 
 {% block site_header_unwrapped %}
-  {% set fxfamilynav_class = 'dark' %}
-  {% include 'firefox/includes/family-nav.html' %}
+  {{ fxfamilynav('dark') }}
 {% endblock %}
 
 {% block content %}

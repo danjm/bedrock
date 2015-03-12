@@ -26,6 +26,7 @@
 
 #wrapper {
     width: 100%;
+    margin-top: -162px; // family nav
     padding-bottom: 0;
     .grainy-sky-solid();
 }
@@ -41,17 +42,17 @@ main {
     .font-size(@largeFontSize);
     color: @textColorSecondary;
 
-    .container a[rel="external"] {
-        .trailing-arrow();
-    }
-}
+    .container {
+        .clearfix();
+        position: relative;
+        width: 940px;
+        margin: 0 auto;
+        overflow: hidden;
 
-.container {
-    .clearfix();
-    position: relative;
-    width: 940px;
-    margin: 0 auto;
-    overflow: hidden;
+        a[rel="external"] {
+            .trailing-arrow();
+        }
+    }
 }
 
 .heading-primary {
@@ -102,7 +103,7 @@ main {
 
 #intro {
     .grainy-sky();
-    padding-bottom: @baseLine * 2;
+    padding: 182px 0 @baseLine * 2;
 
     .heading-primary,
     .heading-tertiary {
