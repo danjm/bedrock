@@ -2,6 +2,8 @@
  # License, v. 2.0. If a copy of the MPL was not distributed with this
  # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
 
+{% from "macros.html" import fxfamilynav with context %}
+
 {% extends "firefox/base-resp.html" %}
 
 {% set_lang_files "firefox/hello" %}
@@ -36,6 +38,12 @@
     'facebook': 'https://www.mozilla.org/firefox/hello/?utm_source=Facebook&utm_medium=social&utm_campaign=Hello&utm_content=WebsiteShare'
   } %}
   {{ share_cta(_('Share'), share_urls, _('Meet Firefox Hello, the easiest way to connect for free over video with anyone, anywhere.'), 'spread-hello', 'sky mini') }}
+{% endblock %}
+
+{% block site_header %}{% endblock %}
+
+{% block site_header_unwrapped %}
+  {{ fxfamilynav('dark') }}
 {% endblock %}
 
 {% block content %}
